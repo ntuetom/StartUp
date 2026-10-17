@@ -195,6 +195,26 @@ section { padding: 88px 0; }
 .film .desc .en { display: block; margin-top: 6px; }
 .film .bar { height: 3px; width: 48px; border-radius: 2px; background: var(--accent); margin-bottom: 16px; }
 
+/* Next film */
+.film.next {
+    min-height: 260px;
+    padding-top: 28px;
+    background-image: url("assets/bg_city_night.jpg");
+    border: 1px dashed rgba(255, 245, 230, 0.28);
+    --accent: var(--gold);
+}
+.film.next::before { background: linear-gradient(160deg, rgba(19, 14, 36, 0.72), rgba(19, 14, 36, 0.95)); }
+.film.next .mark {
+    position: absolute;
+    right: 32px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--serif);
+    font-size: 6rem;
+    font-weight: 700;
+    color: rgba(255, 245, 230, 0.18);
+}
+
 /* Features */
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .feature {
@@ -304,6 +324,24 @@ footer a:hover { color: var(--cream); text-decoration: underline; }
     </div>
 </section>
 
+<section id="next">
+    <div class="wrap">
+        <h2 class="section-title">下一部作品</h2>
+        <p class="en">The next film</p>
+
+        <article class="film next">
+            <div class="mark" aria-hidden="true">？</div>
+            <div class="body">
+                <div class="bar"></div>
+                <span class="tag">FILM 03 · 敬請期待 · COMING SOON</span>
+                <h3>拍攝中<span>In production</span></h3>
+                <p class="desc">新的故事正在準備中。片名、角色和上映時間確定後，會第一時間公布在這裡。
+                    <span class="en">A new story is in the making. Its title, cast and release date will be announced here first.</span></p>
+            </div>
+        </article>
+    </div>
+</section>
+
 <section id="features">
     <div class="wrap">
         <h2 class="section-title">你的選擇，就是劇本</h2>
@@ -337,14 +375,15 @@ footer a:hover { color: var(--cream); text-decoration: underline; }
             <div class="feature">
                 <div class="num">0</div>
                 <h4>免費試看，一次買斷</h4>
-                <p>每部電影都能免費玩到第一個關鍵抉擇。之後一次解鎖，沒有訂閱，也沒有額外付費選項。</p>
-                <p class="en">Play each film free up to its first major decision, then unlock it once. No subscription and no paid choices.</p>
+                <p>每部電影都能免費玩到第一個關鍵抉擇。之後一次解鎖，每部 US$2.99；兩部一起解鎖 US$3.99，比分開買省 US$1.99。沒有訂閱，也沒有額外付費選項。</p>
+                <p class="en">Play each film free up to its first major decision, then unlock it once: US$2.99 per film, or both for US$3.99 — US$1.99 less than buying them separately. No subscription and no paid choices.</p>
+                <p class="en">Prices in other regions follow the App Store's local pricing. 其他地區依 App Store 當地定價。</p>
             </div>
             <div class="feature">
                 <div class="num">✕</div>
                 <h4>不追蹤、不廣告</h4>
-                <p>不用註冊，不蒐集任何資料，進度只存在你的手機上。</p>
-                <p class="en">No sign-up, no ads, no data collected. Your progress stays on your phone.</p>
+                <p>不用註冊，不蒐集個人資料，進度只存在你的手機上。App 當機時會傳送不含身分的當機報告，可以在設定中關閉。</p>
+                <p class="en">No sign-up, no ads, no personal data collected. Your progress stays on your phone. If the app crashes, it sends a crash report that doesn't identify you, which you can turn off in Settings.</p>
             </div>
         </div>
     </div>
