@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>啟程 StartUp – 互動電影</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="啟程：由你的選擇改變結局的互動電影。兩部原創故事，每部 8 種結局。StartUp: interactive films where every choice steers the story toward one of eight endings.">
+<meta property="og:title" content="啟程 StartUp – 互動電影 Interactive Films">
+<meta property="og:description" content="每個選擇，都會把故事推向八種結局之一。Every choice steers the story toward one of eight endings.">
+<meta property="og:image" content="https://ntuetom.github.io/StartUp/assets/icon.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#130e24">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --midnight: #130e24;
+    --ink: #1f172e;
+    --cream: #fff5e6;
+    --muted: #b9adc4;
+    --rose: #f56394;
+    --violet: #7a57db;
+    --gold: #ffc25e;
+    --chen: #6badff;
+    --serif: "Noto Serif TC", "Songti TC", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", "Segoe UI", Roboto, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--cream);
+    background: var(--midnight);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+.en { color: var(--muted); font-size: 0.92em; }
+
+/* Hero */
+.hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: url("assets/bg_city_night.jpg") center 30% / cover no-repeat;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 30% 40%, rgba(122, 87, 219, 0.28), transparent 60%),
+        linear-gradient(180deg, rgba(19, 14, 36, 0.55) 0%, rgba(19, 14, 36, 0.78) 60%, var(--midnight) 100%);
+}
+.hero .wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 24px;
+    align-items: end;
+    width: 100%;
+    padding-top: 64px;
+}
+.app-icon {
+    width: 88px;
+    height: 88px;
+    border-radius: 22%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+.eyebrow {
+    margin: 22px 0 6px;
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+}
+.hero h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(3rem, 8vw, 5.2rem);
+    line-height: 1.1;
+    letter-spacing: 0.08em;
+}
+.hero h1 small {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--sans);
+    font-size: 0.32em;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: var(--muted);
+}
+.hero .lead span, .film .line span { display: inline-block; }
+.hero .lead {
+    margin: 26px 0 4px;
+    font-family: var(--serif);
+    font-size: clamp(1.2rem, 2.6vw, 1.55rem);
+}
+.badge-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.pill {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 245, 230, 0.25);
+    background: rgba(255, 245, 230, 0.06);
+}
+.pill.soon {
+    border: 0;
+    background: linear-gradient(120deg, var(--rose), var(--violet));
+    font-weight: 600;
+}
+.hero-cast {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    min-height: 460px;
+}
+.hero-cast img {
+    width: 58%;
+    filter: drop-shadow(0 16px 30px rgba(0, 0, 0, 0.55));
+    -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent 98%);
+    mask-image: linear-gradient(180deg, #000 72%, transparent 98%);
+}
+.hero-cast img:first-child { margin-right: -14%; z-index: 1; }
+.hero-cast img:last-child { margin-left: -6%; }
+
+/* Sections */
+section { padding: 88px 0; }
+.section-title {
+    margin: 0 0 6px;
+    font-family: var(--serif);
+    font-size: clamp(1.7rem, 4vw, 2.3rem);
+    letter-spacing: 0.06em;
+}
+.section-title + .en { margin: 0 0 40px; }
+
+/* Films */
+.films { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.film {
+    position: relative;
+    border-radius: 22px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 28px 28px;
+    background: var(--ink) center / cover no-repeat;
+    border: 1px solid rgba(255, 245, 230, 0.1);
+}
+.film::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(19, 14, 36, 0.1) 15%, rgba(19, 14, 36, 0.86) 55%, rgba(19, 14, 36, 0.96) 80%);
+}
+.film.chen { background-image: url("assets/bg_office_night.jpg"); --accent: var(--chen); }
+.film.yutong { background-image: url("assets/bg_cafe_evening.jpg"); --accent: var(--rose); }
+.film .portrait {
+    position: relative;
+    align-self: flex-end;
+    width: 62%;
+    max-width: 320px;
+    margin: 16px -8px -72px auto;
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
+    -webkit-mask-image: linear-gradient(180deg, #000 62%, transparent 90%);
+    mask-image: linear-gradient(180deg, #000 62%, transparent 90%);
+}
+.film .body { position: relative; text-shadow: 0 1px 12px rgba(19, 14, 36, 0.9); }
+.film .tag {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+}
+.film h3 {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 2rem;
+    letter-spacing: 0.08em;
+}
+.film h3 span { font-family: var(--sans); font-size: 0.5em; font-weight: 600; color: var(--muted); letter-spacing: 0.1em; margin-left: 8px; }
+.film .line { margin: 10px 0 2px; font-family: var(--serif); font-size: 1.08rem; }
+.film .desc { margin: 12px 0 0; font-size: 0.92rem; color: #e3d9ea; }
+.film .desc .en { display: block; margin-top: 6px; }
+.film .bar { height: 3px; width: 48px; border-radius: 2px; background: var(--accent); margin-bottom: 16px; }
+
+/* Features */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.feature {
+    padding: 26px 24px;
+    border-radius: 18px;
+    background: rgba(255, 245, 230, 0.04);
+    border: 1px solid rgba(255, 245, 230, 0.09);
+}
+.feature .num {
+    font-family: var(--serif);
+    font-size: 2.2rem;
+    line-height: 1;
+    color: var(--gold);
+}
+.feature h4 { margin: 12px 0 4px; font-size: 1.05rem; }
+.feature p { margin: 0; font-size: 0.9rem; color: #e3d9ea; }
+.feature p.en { margin-top: 6px; }
+
+/* Closing */
+.closing {
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, rgba(245, 99, 148, 0.18), transparent 65%);
+}
+.closing .quote { margin: 0; font-family: var(--serif); font-size: clamp(1.4rem, 3.4vw, 2rem); letter-spacing: 0.06em; }
+.closing .en { margin: 8px 0 30px; }
+
+footer {
+    padding: 36px 0 48px;
+    border-top: 1px solid rgba(255, 245, 230, 0.1);
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; }
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--cream); text-decoration: underline; }
+
+@media (max-width: 820px) {
+    .hero { min-height: auto; }
+    .hero .wrap { grid-template-columns: 1fr; padding-top: 48px; }
+    .hero-cast { min-height: 0; height: auto; margin-top: 8px; }
+    .hero-cast img { width: 46%; }
+    section { padding: 64px 0; }
+    .films { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="wrap">
+        <div>
+            <img class="app-icon" src="assets/icon.png" alt="啟程 App 圖示">
+            <p class="eyebrow">INTERACTIVE FILM · 互動電影</p>
+            <h1>啟程<small>STARTUP</small></h1>
+            <p class="lead"><span>每個選擇，</span><span>都會把故事推向八種結局之一。</span></p>
+            <p class="en">Every choice steers the story toward one of eight endings.</p>
+            <div class="badge-row">
+                <span class="pill soon">即將在 App Store 推出 · Coming soon to the App Store</span>
+                <span class="pill">iPhone · iOS 17+</span>
+                <span class="pill">繁體中文 · English</span>
+            </div>
+        </div>
+        <div class="hero-cast" aria-hidden="true">
+            <img src="assets/chen_confident.png" alt="">
+            <img src="assets/yutong_welcome.png" alt="">
+        </div>
+    </div>
+</header>
+
+<main>
+
+<section id="films">
+    <div class="wrap">
+        <h2 class="section-title">兩部原創互動電影</h2>
+        <p class="en">Two original interactive films</p>
+
+        <div class="films">
+            <article class="film chen">
+                <img class="portrait" src="assets/chen_confident.png" alt="陳晨">
+                <div class="body">
+                    <div class="bar"></div>
+                    <span class="tag">FILM 01</span>
+                    <h3>陳晨<span>Chen</span></h3>
+                    <p class="line"><span>創業者、燒不完的深夜，</span><span>與那條你跨過去的線。</span></p>
+                    <p class="en">A founder, endless 3 a.m. nights, and the line you cross.</p>
+                    <p class="desc">投資人逼他把公司轉型，他得在理想和現實之間做出選擇。你為什麼接近他？你會站在哪一邊？
+                        <span class="en">Investors are pushing him to pivot the company he built. Why did you get close to him, and whose side will you take?</span></p>
+                </div>
+            </article>
+
+            <article class="film yutong">
+                <img class="portrait" src="assets/yutong_welcome.png" alt="林語彤">
+                <div class="body">
+                    <div class="bar"></div>
+                    <span class="tag">FILM 02</span>
+                    <h3>林語彤<span>Yutong</span></h3>
+                    <p class="line"><span>老街咖啡館、一紙收購，</span><span>與一牆未完成的畫。</span></p>
+                    <p class="en">A corner café, a buyout, and a wall of unfinished paintings.</p>
+                    <p class="desc">開發商要收掉她的咖啡館「筆觸」。守住夢想，還是為了生存妥協？你走進這間店的理由，會改變一切。
+                        <span class="en">A developer wants her café gone. Hold on to the dream, or compromise to survive? Why you walked through her door changes everything.</span></p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="features">
+    <div class="wrap">
+        <h2 class="section-title">你的選擇，就是劇本</h2>
+        <p class="en">Your choices are the script</p>
+
+        <div class="features">
+            <div class="feature">
+                <div class="num">8</div>
+                <h4>每部 8 種結局</h4>
+                <p>三個關鍵抉擇，分出真愛、救贖、背叛到宿敵的不同結局。</p>
+                <p class="en">Eight endings per film. Three key decisions split the story from true love and redemption to betrayal and rivalry.</p>
+            </div>
+            <div class="feature">
+                <div class="num">♡</div>
+                <h4>看不見的信任</h4>
+                <p>對方對你的信任在暗中累積。有些結局，只有真正走進對方心裡才看得到。</p>
+                <p class="en">Trust builds out of sight. Some endings open only if you have truly earned it.</p>
+            </div>
+            <div class="feature">
+                <div class="num">⟲</div>
+                <h4>回到抉擇的那一刻</h4>
+                <p>分支地圖記下你走過的路。回到任何一個走過的抉擇，選另一條路。</p>
+                <p class="en">A branch map records the routes you have taken. Return to any decision you have reached and choose differently.</p>
+            </div>
+            <div class="feature">
+                <div class="num">◐</div>
+                <h4>典藏與花絮</h4>
+                <p>收集場景、角色表情和結局。有些結局之後，還藏著花絮。</p>
+                <p class="en">Collect scenes, expressions, and endings. Some endings hide an epilogue.</p>
+            </div>
+            <div class="feature">
+                <div class="num">0</div>
+                <h4>免費試看，一次買斷</h4>
+                <p>每部電影都能免費玩到第一個關鍵抉擇。之後一次解鎖，沒有訂閱，也沒有額外付費選項。</p>
+                <p class="en">Play each film free up to its first major decision, then unlock it once. No subscription and no paid choices.</p>
+            </div>
+            <div class="feature">
+                <div class="num">✕</div>
+                <h4>不追蹤、不廣告</h4>
+                <p>不用註冊，不蒐集任何資料，進度只存在你的手機上。</p>
+                <p class="en">No sign-up, no ads, no data collected. Your progress stays on your phone.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 截圖區：App 畫面定案後補上（中英各一組，1320×2868）。 -->
+
+<section class="closing">
+    <div class="wrap">
+        <p class="quote">接下來的路，由你決定。</p>
+        <p class="en">What happens next is up to you.</p>
+        <span class="pill soon">即將在 App Store 推出 · Coming soon to the App Store</span>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="wrap">
+        <span>© 2026 Hungyi Wu</span>
+        <nav>
+            <a href="support">支援 Support</a>
+            <a href="privacy">隱私權政策 Privacy Policy</a>
+            <a href="mailto:gongyingtom@gmail.com">gongyingtom@gmail.com</a>
+        </nav>
+    </div>
+</footer>
+
+</body>
+</html>
