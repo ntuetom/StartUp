@@ -49,15 +49,15 @@ footer {
 
 <p>本政策適用於 iOS App「啟程」（英文名稱 StartUp，以下稱「本 App」）。本 App 由個人開發者 Hungyi Wu（以下稱「我」）開發與營運。</p>
 
-<p><strong>一句話說明：本 App 不蒐集、不傳送、也不分享你的任何個人資料。</strong></p>
+<p><strong>一句話說明：本 App 不蒐集、也不分享你的任何個人資料。只有在 App 當機時，會傳送不含個人身分的當機報告，你可以在設定中關閉。</strong></p>
 
 <h2>不蒐集的資料</h2>
 
 <ul>
 <li>不需要註冊帳號或登入，也不會要求你的姓名、Email、電話等資訊。</li>
-<li>沒有廣告，沒有任何追蹤或分析工具，也沒有使用任何第三方 SDK。</li>
+<li>沒有廣告，沒有任何追蹤或分析工具。使用的第三方 SDK 只有 Google Firebase 的 Cloud Storage（檢查版本更新）與 Crashlytics（當機報告），見下方說明。</li>
 <li>不會讀取你的位置、聯絡人、照片、相機或麥克風。</li>
-<li>遊戲進行時不連上任何伺服器，你的遊玩紀錄不會離開你的裝置。</li>
+<li>除了下方的版本更新檢查與當機報告，本 App 不連上任何伺服器；你的遊玩紀錄不會離開你的裝置。</li>
 </ul>
 
 <h2>只存在你裝置上的資料</h2>
@@ -65,6 +65,27 @@ footer {
 <p>為了讓你能接續遊玩，本 App 會在<strong>你的裝置本機</strong>儲存以下內容：遊戲進度、已解鎖的結局與典藏內容、已讀紀錄，以及語言、音效、震動等設定。</p>
 
 <p>這些資料不會上傳給我或任何第三方，也不會透過 iCloud 同步。刪除本 App 時，這些資料會一併從裝置上移除。</p>
+
+<h2>版本更新檢查</h2>
+
+<p>每次開啟本 App 時，本 App 會從 Google 的 Firebase Cloud Storage 下載一個公開的小檔案。檔案內容只有最新的版本號碼與更新說明，用來提醒你是否有新版本可以更新。</p>
+
+<ul>
+<li>這個請求不包含你的任何個人資料、裝置識別碼或遊玩紀錄，本 App 也已關閉 Firebase SDK 的資料收集功能。</li>
+<li>和任何網路連線一樣，Google 的伺服器在傳送檔案時會收到你的 IP 位址，並依 <a href="https://policies.google.com/privacy">Google 隱私權政策</a>處理。</li>
+<li>沒有網路或檢查失敗時，本 App 會略過檢查，照常讓你遊玩。</li>
+</ul>
+
+<h2>當機報告</h2>
+
+<p>如果本 App 當機，會透過 Google 的 Firebase Crashlytics 傳送一份當機報告給我，用來找出並修正問題。</p>
+
+<ul>
+<li>報告內容：當機時程式出錯的位置與 App 狀態、裝置型號、iOS 版本，以及 Crashlytics 用來統計受影響裝置數量的安裝識別碼。</li>
+<li>報告不包含你的名字、遊玩紀錄或任何能識別你身分的資料，不會與你的身分連結，也不會用於廣告或追蹤。</li>
+<li>這項功能預設開啟。你可以在 App 的「遊戲設定 → 隱私 → 傳送當機報告」關閉，關閉後從下次開啟 App 起生效，尚未送出的報告也會一併刪除。</li>
+<li>當機報告由 Google 依 <a href="https://policies.google.com/privacy">Google 隱私權政策</a>與 <a href="https://firebase.google.com/support/privacy">Firebase 的隱私與安全說明</a>處理。</li>
+</ul>
 
 <h2>購買</h2>
 
@@ -99,15 +120,15 @@ footer {
 
 <p>This policy applies to the iOS app StartUp (Traditional Chinese name: 啟程; "the App"). The App is developed and operated by Hungyi Wu, an individual developer ("I", "me").</p>
 
-<p><strong>In short: the App does not collect, transmit, or share any of your personal data.</strong></p>
+<p><strong>In short: the App does not collect or share any of your personal data. Only if the App crashes does it send a crash report that does not identify you, and you can turn this off in Settings.</strong></p>
 
 <h2>Data I Do Not Collect</h2>
 
 <ul>
 <li>No account or sign-in is required, and the App never asks for your name, email address, phone number, or similar information.</li>
-<li>The App contains no advertising, no tracking or analytics tools, and no third-party SDKs.</li>
+<li>The App contains no advertising and no tracking or analytics tools. The only third-party SDKs it uses are Google Firebase's Cloud Storage (to check for updates) and Crashlytics (for crash reports), described below.</li>
 <li>The App does not access your location, contacts, photos, camera, or microphone.</li>
-<li>The App does not connect to any server during play. Your play history never leaves your device.</li>
+<li>Apart from the update check and crash reports below, the App does not connect to any server. Your play history never leaves your device.</li>
 </ul>
 
 <h2>Data Stored Only on Your Device</h2>
@@ -115,6 +136,27 @@ footer {
 <p>So that you can pick up where you left off, the App stores the following <strong>locally on your device</strong>: story progress, unlocked endings and collection items, read history, and settings such as language, sound, and haptics.</p>
 
 <p>This data is never uploaded to me or to any third party, and it is not synced through iCloud. Deleting the App removes this data from your device.</p>
+
+<h2>Update Check</h2>
+
+<p>Each time you open the App, it downloads a small public file from Google's Firebase Cloud Storage. The file contains only the latest version number and release notes, so the App can tell you when an update is available.</p>
+
+<ul>
+<li>The request contains none of your personal data, device identifiers, or play history, and the App turns off the Firebase SDK's data collection.</li>
+<li>As with any internet connection, Google's servers receive your IP address when delivering the file and handle it under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</li>
+<li>If you are offline or the check fails, the App skips it and lets you play as usual.</li>
+</ul>
+
+<h2>Crash Reports</h2>
+
+<p>If the App crashes, it sends a crash report to me through Google's Firebase Crashlytics so the problem can be found and fixed.</p>
+
+<ul>
+<li>A report contains where in the code the crash happened and the App's state at that moment, the device model, the iOS version, and an installation identifier Crashlytics uses to count how many devices are affected.</li>
+<li>Reports never contain your name, your play history, or anything that identifies you. They are not linked to your identity and are not used for advertising or tracking.</li>
+<li>This is on by default. You can turn it off in the App under Settings → Privacy → Send Crash Reports; this takes effect the next time you open the App, and any reports not yet sent are deleted.</li>
+<li>Crash reports are handled by Google under <a href="https://policies.google.com/privacy">Google's Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy">Firebase's privacy and security terms</a>.</li>
+</ul>
 
 <h2>Purchases</h2>
 
