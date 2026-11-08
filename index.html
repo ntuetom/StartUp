@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>啟程 StartUp – 互動電影</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="啟程：兩部原創互動電影，每部 8 種結局。1.2.0 的 iPhone Duo 版面，展開分區，收合接著玩。StartUp: two interactive films, eight endings each, and a preview of the iPhone Duo layout in 1.2.0.">
+<meta name="description" content="啟程：兩部原創互動電影，每部 8 種結局。iPhone Duo 即將支援。StartUp: two interactive films, eight endings each. iPhone Duo support is coming soon.">
 <meta property="og:title" content="啟程 StartUp – 互動電影 Interactive Films">
-<meta property="og:description" content="預覽 1.2.0 的 iPhone Duo 玩法：展開看演出，收合接著玩。Preview the iPhone Duo layout in 1.2.0: unfold for the scene, then fold and carry on.">
+<meta property="og:description" content="iPhone Duo 即將支援：展開看演出，收合接著玩。iPhone Duo support is coming soon: unfold for the scene, then fold and carry on.">
 <meta property="og:image" content="https://ntuetom.github.io/StartUp/assets/icon.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#130e24">
@@ -153,7 +153,7 @@ section { padding: 88px 0; }
     border-block: 1px solid rgba(255, 245, 230, 0.1);
     background: radial-gradient(ellipse at 20% 30%, rgba(122, 87, 219, 0.16), transparent 64%);
 }
-.duo .eyebrow { margin: 0 0 8px; }
+.duo .eyebrow { margin: 0 0 8px; letter-spacing: 0.14em; }
 .duo-intro { max-width: 44rem; margin: 16px 0 4px; }
 .duo-intro + .en { max-width: 44rem; margin: 0 0 28px; }
 .duo-layout {
@@ -165,12 +165,12 @@ section { padding: 88px 0; }
 .duo-figure { margin: 0; }
 .duo-frame {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     min-height: clamp(200px, 36vw, 320px);
-    border: 1px solid rgba(255, 194, 94, 0.32);
+    border: 6px solid #0a0711;
     border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 0 0 1px rgba(255, 194, 94, 0.32), 0 18px 48px rgba(0, 0, 0, 0.28);
 }
 .duo-stage {
     display: flex;
@@ -184,22 +184,22 @@ section { padding: 88px 0; }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px;
-    padding: clamp(12px, 3vw, 28px);
-    border-left: 1px solid rgba(255, 194, 94, 0.32);
+    gap: 8px;
+    padding: clamp(8px, 2vw, 20px);
+    border-left: 2px solid #0a0711;
     background: linear-gradient(145deg, #2a1d3c, var(--midnight));
+    font-size: clamp(0.75rem, 1.5vw, 0.875rem);
+    line-height: 1.55;
 }
-.duo-reading .label { color: var(--gold); font-size: 0.74rem; }
-.duo-reading .line { width: 84%; height: 4px; border-radius: 4px; background: var(--muted); }
-.duo-reading .line.short { width: 62%; }
+.duo-reading p { margin: 0; }
+.duo-reading .label { color: var(--gold); font-size: 0.9em; font-weight: 700; }
+.duo-reading .prompt { margin-top: 4px; color: var(--muted); font-size: 0.9em; }
 .duo-reading .option {
-    width: 100%;
-    min-height: 26px;
+    padding: 6px 8px;
     border: 1px solid rgba(245, 99, 148, 0.48);
     border-radius: 7px;
     background: rgba(245, 99, 148, 0.1);
 }
-.duo-reading .line + .option { margin-top: 6px; }
 .duo-figure figcaption { margin-top: 10px; font-size: 0.78rem; color: var(--muted); }
 .duo-modes { display: grid; gap: 16px; margin: 0; }
 .duo-modes div { padding-left: 14px; border-left: 2px solid var(--gold); }
@@ -342,7 +342,7 @@ footer a:hover { color: var(--cream); text-decoration: underline; }
             <p class="en">Every choice steers the story toward one of eight endings.</p>
             <div class="badge-row">
                 <a class="pill store" href="https://apps.apple.com/app/id6799401292">在 App Store 查看 <span lang="en">· View on the App Store</span></a>
-                <a class="pill duo-link" href="#duo">iPhone Duo 玩法 <span lang="en">· Explore Duo</span></a>
+                <a class="pill duo-link" href="#duo">iPhone Duo 即將支援 <span lang="en">· Coming Soon</span></a>
                 <span class="pill">iPhone · iOS 17+</span>
                 <span class="pill">繁體中文 · English</span>
             </div>
@@ -358,25 +358,25 @@ footer a:hover { color: var(--cream); text-decoration: underline; }
 
 <section class="duo" id="duo" aria-labelledby="duo-title">
     <div class="wrap">
-        <p class="eyebrow">IPHONE DUO · 1.2.0 預覽 <span lang="en">· PREVIEW</span></p>
+        <p class="eyebrow">iPhone Duo 即將支援 <span lang="en">· Coming Soon</span></p>
         <h2 class="section-title" id="duo-title">展開看演出，收合接著玩</h2>
         <p class="en" lang="en">Unfold for the scene. Fold and carry on.</p>
-        <p class="duo-intro">《啟程》1.2.0 為陳晨和林語彤兩部電影加入 iPhone Duo 版面。開合時，畫面會重新排版，故事留在原處。讀到一半的對白、等你回答的抉擇，都可以接著看、接著選。</p>
-        <p class="en" lang="en">StartUp 1.2.0 adds a layout for iPhone Duo to both Chen and Yutong. Fold or unfold mid-scene and pick up at the same line of dialogue or the same choice.</p>
+        <p class="duo-intro">陳晨和林語彤兩部電影都將支援 iPhone Duo。開合時，畫面會重新排版，讓你從同一句對白或同一個抉擇繼續。</p>
+        <p class="en" lang="en">iPhone Duo support is coming to both Chen and Yutong. Fold or unfold mid-scene and pick up at the same line of dialogue or the same choice.</p>
 
         <div class="duo-layout">
             <figure class="duo-figure">
-                <div class="duo-frame" aria-hidden="true">
+                <div class="duo-frame" role="img" aria-label="iPhone Duo 展開遊玩示意：左側是夜晚辦公室裡的陳晨，右側顯示他的對白與兩個可選的回答。">
                     <div class="duo-stage"><img src="assets/chen_confident.png" alt="" loading="lazy"></div>
                     <div class="duo-reading">
-                        <span class="label">對白與抉擇 <span lang="en">· DIALOGUE &amp; CHOICES</span></span>
-                        <span class="line"></span>
-                        <span class="line short"></span>
-                        <span class="option"></span>
-                        <span class="option"></span>
+                        <p class="label">陳晨 · Chen</p>
+                        <p>說真的。你三更半夜，跑來一個快撐不住的人的辦公室……圖什麼？</p>
+                        <p class="prompt">你為何在這裡</p>
+                        <p class="option">我想看你撐過去，也不想讓你一個人扛。</p>
+                        <p class="option">因為你知道問題在哪，而我想站得離答案近一點。</p>
                     </div>
                 </div>
-                <figcaption>展開版面示意 <span lang="en">· Unfolded layout illustration</span></figcaption>
+                <figcaption>iPhone Duo 展開遊玩示意 <span lang="en">· Gameplay illustration: Chen on the left, dialogue and choices on the right.</span></figcaption>
             </figure>
 
             <dl class="duo-modes">
