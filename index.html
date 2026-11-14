@@ -250,7 +250,24 @@ section { padding-block: clamp(48px, 7vw, 84px); }
 
 .gameplay { padding-top: 0; text-align: center; }
 .gallery { max-width: 520px; margin-inline: auto; }
-.gallery img { width: 100%; border: 1px solid #fff5e626; border-radius: 12px; background: var(--ink); }
+.gallery img, .gallery video { width: 100%; border: 1px solid #fff5e626; border-radius: 12px; background: var(--ink); }
+/* The clip is a bare screen recording; this draws the bezel the still has baked in. */
+.gallery .clip {
+    aspect-ratio: 560 / 1154;
+    padding: 3.4% 4.2%;
+    border: 1px solid #fff5e626;
+    border-radius: 12px;
+    background: var(--ink);
+}
+.gallery video {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #d9b08c88;
+    border-radius: 11% / 5.2%;
+    background: #0a0711;
+}
+.gallery .still { display: none; }
 .gallery figcaption { margin-top: 8px; font-size: 0.9rem; }
 .gallery figcaption span { display: block; }
 .closing { text-align: center; background: radial-gradient(ellipse at 50% 0%, #44213e, transparent 75%); }
@@ -274,6 +291,8 @@ footer a:hover { text-decoration: underline; }
     html { scroll-behavior: auto; }
     .hero-cast img { animation: none; }
     .duo-frame, .duo-stage, .duo-reading, .film img { transition: none; }
+    .gallery .clip { display: none; }
+    .gallery .still { display: block; }
 }
 </style>
 </head>
@@ -358,7 +377,11 @@ footer a:hover { text-decoration: underline; }
         <p class="en" lang="en">Gameplay</p>
         <div class="gallery">
             <figure>
-                <img src="assets/gameplay-chat.webp" width="560" height="1154" alt="聊天畫面，下方顯示三個可選的回答" loading="lazy" decoding="async">
+                <div class="clip"><video width="560" height="1154" autoplay muted loop playsinline preload="metadata" poster="assets/gameplay-choice-poster.webp" aria-label="遊玩片段：陳晨提問後出現三個可選的回答，選擇後他做出反應。Gameplay clip: Chen asks a question, three replies appear, and he reacts to the one chosen.">
+                    <source src="assets/gameplay-choice.webm" type="video/webm">
+                    <source src="assets/gameplay-choice.mp4" type="video/mp4">
+                </video></div>
+                <img class="still" src="assets/gameplay-chat.webp" width="560" height="1154" alt="聊天畫面，下方顯示三個可選的回答" loading="lazy" decoding="async">
                 <figcaption>對白與抉擇 <span class="en" lang="en">Dialogue and choices</span></figcaption>
             </figure>
             <figure>
