@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <title>啟程 StartUp – 互動電影</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="啟程：兩部原創互動電影，每部 8 種結局。iPhone Duo 即將支援。StartUp: two interactive films, eight endings each. iPhone Duo support is coming soon.">
+<meta name="description" content="啟程：兩部原創互動電影，每部 8 種結局。現已支援 iPhone Duo 與橫向遊玩。StartUp: two interactive films, eight endings each. Now on iPhone Duo, with landscape play.">
 <meta property="og:title" content="啟程 StartUp – 互動電影 Interactive Films">
-<meta property="og:description" content="iPhone Duo 即將支援：展開看演出，收合接著玩。iPhone Duo support is coming soon: unfold for the scene, then fold and carry on.">
+<meta property="og:description" content="現已支援 iPhone Duo：展開看演出，收合接著玩。Now on iPhone Duo: unfold for the scene, then fold and carry on.">
 <meta property="og:image" content="https://ntuetom.github.io/StartUp/assets/icon.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#130e24">
@@ -193,12 +193,12 @@ section { padding-block: clamp(48px, 7vw, 84px); }
 #duo-half:checked ~ figure .duo-stage { width: 100%; height: 51%; }
 #duo-half:checked ~ figure .duo-reading { top: 51%; left: 0; width: 100%; height: 49%; }
 #duo-folded:checked ~ figure .duo-frame { width: min(100%, 220px); }
-#duo-folded:checked ~ figure .duo-stage { width: 100%; height: 60%; }
+#duo-folded:checked ~ figure .duo-stage { width: 100%; height: 48%; }
 #duo-folded:checked ~ figure .duo-reading {
-    top: 54%;
+    top: 41%;
     left: 3%;
     width: 94%;
-    height: 44%;
+    height: 57%;
     padding: 6px 8px;
     border-color: #f5639466;
     border-radius: 10px;
@@ -307,7 +307,7 @@ footer a:hover { text-decoration: underline; }
             <p class="en" lang="en">Interactive films. You choose the ending.</p>
             <div class="actions">
                 <a class="pill store" href="https://apps.apple.com/app/id6799401292" aria-label="在 App Store 查看啟程">App Store</a>
-                <a class="pill duo-link" href="#duo">Duo 即將支援&nbsp;·&nbsp;<span lang="en">Coming Soon</span></a>
+                <a class="pill duo-link" href="#duo">現已支援 Duo&nbsp;·&nbsp;<span lang="en">Now on Duo</span></a>
             </div>
         </div>
         <div class="hero-cast" aria-hidden="true">
@@ -321,7 +321,7 @@ footer a:hover { text-decoration: underline; }
 <section class="duo" id="duo" aria-labelledby="duo-title">
     <div class="wrap">
         <h2 class="section-title" id="duo-title">iPhone Duo</h2>
-        <p class="duo-status">即將支援 · <span lang="en">Coming Soon</span></p>
+        <p class="duo-status">現已支援 · <span lang="en">Available Now</span></p>
         <fieldset class="duo-demo">
             <legend class="sr-only">Duo 遊玩示意 · <span lang="en">Duo gameplay preview</span></legend>
             <input type="radio" name="duo-mode" id="duo-open" checked>
@@ -335,15 +335,15 @@ footer a:hover { text-decoration: underline; }
                     <div class="duo-stage"><img src="assets/chen_confident.png" alt=""></div>
                     <div class="duo-reading">
                         <p class="speaker">陳晨 · <span lang="en">Chen</span></p>
-                        <p>你三更半夜跑來……圖什麼？</p>
-                        <p class="option">我想陪你撐過去。</p>
-                        <p class="option">我想離答案近一點。</p>
+                        <p>你盯著我，有三秒了。不是認得我，就是在想怎麼搭話——哪個？</p>
+                        <p class="option">「後者。我還沒想好，先承認比較省事。」</p>
+                        <p class="option">「都不是。只是你比這屋裡其他人安靜。」</p>
                     </div>
                 </div>
                 <figcaption>同一幕，開合都能接著玩。 <span lang="en">Same scene, any fold.</span></figcaption>
             </figure>
         </fieldset>
-        <p class="duo-also">一般 iPhone 也即將支援橫向遊玩。 <span class="en" lang="en">Landscape play is coming to every iPhone, too.</span></p>
+        <p class="duo-also">其他 iPhone 也能直橫切換，轉向後接著看。 <span class="en" lang="en">Other iPhones can switch between portrait and landscape and keep playing.</span></p>
     </div>
 </section>
 
